@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="stylesheet" href="ownStyles/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -24,17 +25,81 @@
         <div id="unity-build-title">webIntegration2022</div>
       </div>
     </div>
-    <button id="red" class="scaleButton">Change to red</button></br>
-    <button id="green" class="scaleButton">Change to green</button></br>
-    <button id="blue" class="scaleButton">Change to blue</button></br>
-    <button id="purple" class="scaleButton">Change to purple</button></br>
-    <button id="scale" class="scaleButton">Scale</button></br>
-    <button id="clear" class="scaleButton">Clear</button></br>
-    <button id="rotate" class="scaleButton">Rotate</button></br>
-    <input id="scaleInputX" class="scaleInput" type="text" placeholder="Enter scale value X"></br>
-    <input id="scaleInputY" class="scaleInput" type="text" placeholder="Enter scale value Y"></br>
-    <input id="scaleInputZ" class="scaleInput" type="text" placeholder="Enter scale value Z"></br>
-    <button id="scaleInputs" class="scaleButton">ScaleWithInp</button></br>
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        Change color
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <button id="red" class="scaleButton">Change to red</button>
+        </li>
+        <li class="list-group-item">
+          <button id="green" class="scaleButton">Change to green</button>
+        </li>
+        <li class="list-group-item">
+          <button id="blue" class="scaleButton">Change to blue</button>
+        </li>
+        <li class="list-group-item">
+          <button id="purple" class="scaleButton">Change to purple</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        Transform
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <button id="rotate" class="scaleButton">Rotate</button>
+        </li>
+        <li class="list-group-item">
+          <button id="clear" class="scaleButton">Clear</button>
+        </li>
+        <li class="list-group-item">
+          <button id="scale" class="scaleButton">Scale</button>
+        </li>
+        <li class="list-group-item">
+          <input id="scaleInputX" class="scaleInput" type="text" placeholder="Enter scale value X"></br>
+          <input id="scaleInputY" class="scaleInput" type="text" placeholder="Enter scale value Y"></br>
+          <input id="scaleInputZ" class="scaleInput" type="text" placeholder="Enter scale value Z"></br>
+        </li>
+        <li class="list-group-item">
+          <button id="scaleInputs" class="scaleButton">ScaleWithInp</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        Tirador
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <select style="margin-top: 10px; margin-left: 10px; " name="cars" id="cars">
+            <option value="t1">tipo 1</option>
+            <option value="t2">tipo 2</option>
+            <option value="t3">tipo 3</option>
+          </select>
+          <select style="margin-top: 10px; margin-left: 10px; " name="cars" id="cars">
+            <option value="arriba-izq">Arriba izquierda</option>
+            <option value="arriba-m">Arriba Medio</option>
+            <option value="arriba-der">Arriba derecha</option>
+            <option value ="izquierda">Izquierda</option>
+            <option value="medio">Medio</option>
+            <option value ="derecha">Derecha</option>
+            <option value="abajo-izq">Abajo izquierda</option>
+            <option value="abajo-m">Abajo medio</option>
+            <option value="abajo-der">Abajo derecha</option>
+          </select>
+          
+        </li>
+      </ul>
+    </div>
+
     <script type="text/javascript" src="ownScripts/HookJavascript_Unity.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
