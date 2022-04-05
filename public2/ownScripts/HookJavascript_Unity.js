@@ -121,8 +121,7 @@ script.onload = () => {
       myInstance.SendMessage("Hook", "ScaleObjs");
     });
     document.getElementById("clear").addEventListener("click", () => {
-      var res = myInstance.SendMessage("Hook", "ClearObj");
-      console.log(res);
+      myInstance.SendMessage("Hook", "ClearObj");
     });
 
     document.getElementById("scaleInputs").addEventListener("click", () => {
