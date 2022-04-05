@@ -31,18 +31,17 @@ function unityShowBanner(msg, type) {
 }
 
 var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/webgl Door.loader.js";
+      var loaderUrl = buildUrl + "/web2.loader.js";
       var config = {
-        dataUrl: buildUrl + "/webgl Door.data.unityweb",
-        frameworkUrl: buildUrl + "/webgl Door.framework.js.unityweb",
-        codeUrl: buildUrl + "/webgl Door.wasm.unityweb",
+        dataUrl: buildUrl + "/web2.data.unityweb",
+        frameworkUrl: buildUrl + "/web2.framework.js.unityweb",
+        codeUrl: buildUrl + "/web2.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Ardis_webgl",
         productVersion: "0.1",
         showBanner: unityShowBanner,
       };
-
 // By default Unity keeps WebGL canvas render target size matched with
 // the DOM size of the canvas element (scaled by window.devicePixelRatio)
 // Set this to false if you want to decouple this synchronization from
