@@ -4,7 +4,7 @@ var loadingBar = document.querySelector("#unity-loading-bar");
 var progressBarFull = document.querySelector("#unity-progress-bar-full");
 var fullscreenButton = document.querySelector("#unity-fullscreen-button");
 var warningBanner = document.querySelector("#unity-warning");
-
+console.log('hola')
 // Shows a temporary message banner/ribbon for a few seconds, or
 // a permanent error message on top of the canvas if type=='error'.
 // If type=='warning', a yellow highlight color is used.
@@ -121,7 +121,8 @@ script.onload = () => {
       myInstance.SendMessage("Hook", "ScaleObjs");
     });
     document.getElementById("clear").addEventListener("click", () => {
-      myInstance.SendMessage("Hook", "ClearObj");
+      var res = myInstance.SendMessage("Hook", "ClearObj");
+      console.log(res);
     });
 
     document.getElementById("scaleInputs").addEventListener("click", () => {
