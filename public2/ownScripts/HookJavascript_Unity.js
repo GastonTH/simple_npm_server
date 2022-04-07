@@ -30,17 +30,17 @@ function unityShowBanner(msg, type) {
 }
 
 var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/web2.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/web2.data.unityweb",
-        frameworkUrl: buildUrl + "/web2.framework.js.unityweb",
-        codeUrl: buildUrl + "/web2.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Ardis_webgl",
-        productVersion: "0.1",
-        showBanner: unityShowBanner,
-      };
+var loaderUrl = buildUrl + "/web2.loader.js";
+var config = {
+  dataUrl: buildUrl + "/web2.data.unityweb",
+  frameworkUrl: buildUrl + "/web2.framework.js.unityweb",
+  codeUrl: buildUrl + "/web2.wasm.unityweb",
+  streamingAssetsUrl: "StreamingAssets",
+  companyName: "DefaultCompany",
+  productName: "Ardis_webgl",
+  productVersion: "0.1",
+  showBanner: unityShowBanner,
+};
 // By default Unity keeps WebGL canvas render target size matched with
 // the DOM size of the canvas element (scaled by window.devicePixelRatio)
 // Set this to false if you want to decouple this synchronization from
@@ -77,10 +77,10 @@ var script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
   createUnityInstance(canvas, config, (progress) => {
-    
+
     progressBarFull.style.width = 100 * progress + "%";
   }).then((unityInstance) => {
-    
+
     loadingBar.style.display = "none";
     fullscreenButton.onclick = () => {
       unityInstance.SetFullscreen(1);
@@ -88,14 +88,14 @@ script.onload = () => {
   }).catch((message) => {
     alert(message);
   });
-  
+
   var pos = { x: 0, y: 0, z: 0 };
   var scaleInputX = document.getElementById("scaleInputX");
   var scaleInputY = document.getElementById("scaleInputY");
   var scaleInputZ = document.getElementById("scaleInputZ");
 
   createUnityInstance(canvas, config, () => { }).then((unityInstance) => {
-    
+
     myInstance = unityInstance;
 
     // Metodo que genera los inputs de escala
@@ -103,25 +103,9 @@ script.onload = () => {
 
     //TODO recordad quitar
     medidaProvisional();
-    
+
     document.getElementById("red").addEventListener("click", () => {
-      myInstance.SendMessage("Hook", "TintRed");
-    });
-    document.getElementById("green").addEventListener("click", () => {
-      myInstance.SendMessage("Hook", "TintGreen");
-    });
-    document.getElementById("blue").addEventListener("click", () => {
-      myInstance.SendMessage("Hook", "TintBlue");
-    });
-    document.getElementById("purple").addEventListener("click", () => {
-      myInstance.SendMessage("Hook", "TintPurple");
-    });
-    document.getElementById("scale").addEventListener("click", () => {
-      myInstance.SendMessage("Hook", "ScaleObjs");
-    });
-    document.getElementById("clear").addEventListener("click", () => {
-      var res = myInstance.SendMessage("Hook", "ClearObj");
-      console.log(res);
+      myInstance.SendMessage("Hook", "ChangePosition", "arribaDerecha");
     });
 
     document.getElementById("scaleInputs").addEventListener("click", () => {
@@ -130,19 +114,31 @@ script.onload = () => {
       pos.y = scaleInputY.value;
       pos.z = scaleInputZ.value;
 
-      myInstance.SendMessage("Hook", "ScaleObjsWithInputs", JSON.stringify(pos));
+      // si alguno de los inouts es distinto a 0 nuestralo
+      if (pos.x != 0 && pos.y != 0 && pos.z != 0) {
+        myInstance.SendMessage("Hook", "ScaleObjsWithInputs", JSON.stringify(pos));
+
+
+        //limpiar los inputs 
+        scaleInputX.value = "";
+        scaleInputY.value = "";
+        scaleInputZ.value = "";
+
+      }else{
+        alert("No se puede escalar un objeto con valores 0");
+      }
+
     });
+
     document.getElementById("rotate").addEventListener("click", () => {
       myInstance.SendMessage("Hook", "RotateObjs");
     });
-
-
 
   });
 };
 document.body.appendChild(script);
 
-function medidaProvisional(){
+function medidaProvisional() {
 
   //TODO cambiar ya que fueza al programa a hacer focus a un input sin necesidad
   document.getElementById("scaleInputX").focus();
