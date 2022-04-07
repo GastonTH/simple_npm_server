@@ -26,20 +26,17 @@
     </div>
     <div class="card" style="width: 18rem;">
       <div class="card-header">
-        Change color
+        Change material
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
-          <button id="red" class="scaleButton">Change to red</button>
+          <button id="red" class="scaleButton">Change to material 1</button>
         </li>
         <li class="list-group-item">
-          <button id="green" class="scaleButton">Change to green</button>
+          <button id="green" class="scaleButton">Change to material 2</button>
         </li>
         <li class="list-group-item">
-          <button id="blue" class="scaleButton">Change to blue</button>
-        </li>
-        <li class="list-group-item">
-          <button id="purple" class="scaleButton">Change to purple</button>
+          <button id="blue" class="scaleButton">Change to material 3</button>
         </li>
       </ul>
     </div>
@@ -49,15 +46,6 @@
         Transform
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <button id="rotate" class="scaleButton">Rotate</button>
-        </li>
-        <li class="list-group-item">
-          <button id="clear" class="scaleButton">Clear</button>
-        </li>
-        <li class="list-group-item">
-          <button id="scale" class="scaleButton">Scale</button>
-        </li>
         <li class="list-group-item">
           <input id="scaleInputX" class="scaleInput" type="text" placeholder="Enter scale value X"></br>
           <input id="scaleInputY" class="scaleInput" type="text" placeholder="Enter scale value Y"></br>
@@ -75,24 +63,20 @@
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
-          <select style="margin-top: 10px; margin-left: 10px; " name="cars" id="cars">
-            <option value="t1">tipo 1</option>
-            <option value="t2">tipo 2</option>
-            <option value="t3">tipo 3</option>
-          </select>
-          <select style="margin-top: 10px; margin-left: 10px; " name="cars" id="cars">
-            <option value="arriba-izq">Arriba izquierda</option>
-            <option value="arriba-m">Arriba Medio</option>
-            <option value="arriba-der">Arriba derecha</option>
+          <select style="margin-top: 10px; margin-left: 10px; " name="position" id="position" onchange="changePosition()">
+            <option value="arribaIzquierda">Arriba izquierda</option>
+            <option value="arriba">Arriba Medio</option>
+            <option value="arribaDerecha">Arriba derecha</option>
             <option value ="izquierda">Izquierda</option>
-            <option value="medio">Medio</option>
+            <option value="centro">Medio</option>
             <option value ="derecha">Derecha</option>
-            <option value="abajo-izq">Abajo izquierda</option>
-            <option value="abajo-m">Abajo medio</option>
-            <option value="abajo-der">Abajo derecha</option>
+            <option value="abajoIzquierda" selected>Abajo izquierda</option>
+            <option value="abajo">Abajo medio</option>
+            <option value="abajoDerecha">Abajo derecha</option>
           </select>
-          
-          
+        </li>
+        <li class="list-group-item">
+          <button id="rotate" class="scaleButton">Rotate</button>
         </li>
       </ul>
     </div>

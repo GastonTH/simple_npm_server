@@ -89,6 +89,7 @@ script.onload = () => {
     alert(message);
   });
 
+
   var pos = { x: 0, y: 0, z: 0 };
   var scaleInputX = document.getElementById("scaleInputX");
   var scaleInputY = document.getElementById("scaleInputY");
@@ -97,16 +98,13 @@ script.onload = () => {
   createUnityInstance(canvas, config, () => { }).then((unityInstance) => {
 
     myInstance = unityInstance;
+    
 
     // Metodo que genera los inputs de escala
     loadInputs();
 
     //TODO recordad quitar
     medidaProvisional();
-
-    document.getElementById("red").addEventListener("click", () => {
-      myInstance.SendMessage("Hook", "ChangePosition", "arribaDerecha");
-    });
 
     document.getElementById("scaleInputs").addEventListener("click", () => {
 
@@ -131,7 +129,7 @@ script.onload = () => {
     });
 
     document.getElementById("rotate").addEventListener("click", () => {
-      myInstance.SendMessage("Hook", "RotateObjs");
+      myInstance.SendMessage("Hook", "Rotate");
     });
 
   });
@@ -160,4 +158,9 @@ function loadInputs() {
       allInputs[i].blur();
     })
   }
+}
+
+function changePosition() {
+    let location = document.getElementById("position").value;
+    myInstance.SendMessage("Hook", "ChangePosition", location);
 }
