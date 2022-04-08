@@ -164,3 +164,8 @@ function changePosition() {
     let location = document.getElementById("position").value;
     myInstance.SendMessage("Hook", "ChangePosition", location);
 }
+function changeMaterial() {
+  let mat = document.getElementById("mat").value;
+  myInstance.SendMessage("Hook", "ChangeMaterial", mat);
+  console.log(mat);
+}

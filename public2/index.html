@@ -26,23 +26,6 @@
     </div>
     <div class="card" style="width: 18rem;">
       <div class="card-header">
-        Change material
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <button id="red" class="scaleButton">Change to material 1</button>
-        </li>
-        <li class="list-group-item">
-          <button id="green" class="scaleButton">Change to material 2</button>
-        </li>
-        <li class="list-group-item">
-          <button id="blue" class="scaleButton">Change to material 3</button>
-        </li>
-      </ul>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <div class="card-header">
         Transform
       </div>
       <ul class="list-group list-group-flush">
@@ -77,6 +60,19 @@
         </li>
         <li class="list-group-item">
           <button id="rotate" class="scaleButton">Rotate</button>
+        </li>
+      </ul>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <select style="margin-top: 10px; margin-left: 10px; " name="position" id="mat" onchange="changeMaterial()">
+            <option value="azul" selected>Azul</option>
+            <option value="huevo">Blanco Huevo</option>
+            <option value="gray">Gris</option>
+            <option value ="wood1">Madera 1</option>
+            <option value ="wood2">Madera 2</option>
+            <option value ="wood3">Madera 3</option>
+            <option value ="wood4">Madera 4</option>
+          </select>
         </li>
       </ul>
     </div>
